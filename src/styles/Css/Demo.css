@@ -1,0 +1,173 @@
+.demo {
+  padding: 100px 8%;
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+}
+
+.demo-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 80px;
+  flex-wrap: wrap;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.demo-image {
+  flex: 1;
+  text-align: center;
+  position: relative;
+}
+
+.demo-image::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.demo-image img {
+  width: 100%;
+  max-width: 500px;
+  position: relative;
+  z-index: 1;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.demo-image img:hover {
+  transform: scale(1.05) rotate(2deg);
+}
+
+.demo-content {
+  flex: 1;
+  max-width: 600px;
+}
+
+.demo-content h2 {
+  font-size: 42px;
+  color: #0f172a;
+  margin-bottom: 20px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.demo-content p {
+  color: #64748b;
+  line-height: 1.8;
+  margin-bottom: 40px;
+  font-size: 17px;
+}
+
+.demo-steps {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+  margin-bottom: 40px;
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  border: 1px solid #e2e8f0;
+}
+
+.step:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  border-color: #2563eb;
+}
+
+.step span {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #ff6b35, #f59e0b);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 20px;
+  flex-shrink: 0;
+  box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+}
+
+.step p {
+  margin: 0;
+  color: #334155;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.demo-content button {
+  background: linear-gradient(135deg, #ff6b35, #f59e0b);
+  color: white;
+  border: none;
+  padding: 16px 36px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 16px;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+}
+
+.demo-content button:hover {
+  background: linear-gradient(135deg, #e85a2b, #d97706);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
+}
+
+@media (max-width: 968px) {
+  .demo-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 50px;
+  }
+
+  .demo-content {
+    max-width: 100%;
+  }
+
+  .demo-steps {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin: 0 auto 40px;
+  }
+
+  .step {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .demo {
+    padding: 60px 20px;
+  }
+
+  .demo-content h2 {
+    font-size: 32px;
+  }
+
+  .demo-content p {
+    font-size: 16px;
+  }
+
+  .demo-image img {
+    max-width: 350px;
+  }
+}
