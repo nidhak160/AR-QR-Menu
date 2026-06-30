@@ -1,5 +1,5 @@
 import "../styles/Css/Demo.css";
-import demoImage from "../assets/images/Demo-image.png"; 
+import demoImage from "../assets/image/Demo-image.png"; 
 
 function Demo() {
   return (
