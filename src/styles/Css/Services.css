@@ -96,19 +96,64 @@
 
   .services h2 {
     font-size: 32px;
+    margin-bottom: 12px;
   }
 
   .subtitle {
     font-size: 16px;
-    margin-bottom: 40px;
+    margin-bottom: 35px;
+    padding: 0 10px;
   }
 
   .service-grid {
     grid-template-columns: 1fr;
     gap: 20px;
+    max-width: 500px;
+    margin: 0 auto;
   }
 
   .service-card {
     padding: 30px 25px;
+  }
+
+  .service-card h3 {
+    font-size: 20px;
+  }
+
+  .icon {
+    font-size: 42px;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .services {
+    padding: 50px 16px;
+  }
+
+  .services h2 {
+    font-size: 28px;
+  }
+
+  .subtitle {
+    font-size: 15px;
+    margin-bottom: 30px;
+  }
+
+  .service-card {
+    padding: 25px 20px;
+  }
+
+  .service-card h3 {
+    font-size: 18px;
+  }
+
+  .service-card p {
+    font-size: 14px;
+  }
+
+  .icon {
+    font-size: 38px;
+    margin-bottom: 18px;
   }
 }

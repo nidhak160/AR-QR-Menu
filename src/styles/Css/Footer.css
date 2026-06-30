@@ -122,10 +122,16 @@
   .footer-container {
     grid-template-columns: 1fr;
     gap: 40px;
+    max-width: 500px;
+    margin: 0 auto;
   }
 
   .footer-logo h2 {
     font-size: 24px;
+  }
+
+  .footer-logo p {
+    font-size: 14px;
   }
 
   .footer-links h3::after,
@@ -147,5 +153,55 @@
 
   .social-icons {
     justify-content: center;
+  }
+
+  .footer p,
+  .footer a {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 50px 16px 20px;
+  }
+
+  .footer-container {
+    gap: 35px;
+  }
+
+  .footer-logo h2 {
+    font-size: 22px;
+  }
+
+  .footer-logo p {
+    font-size: 13px;
+  }
+
+  .footer h2,
+  .footer h3 {
+    font-size: 16px;
+    margin-bottom: 15px;
+  }
+
+  .footer p,
+  .footer a {
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+
+  .social-icons {
+    gap: 12px;
+  }
+
+  .social-icons svg {
+    font-size: 20px;
+    padding: 8px;
+  }
+
+  .footer-bottom {
+    margin-top: 40px;
+    padding-top: 20px;
+    font-size: 13px;
   }
 }

@@ -1,16 +1,97 @@
-# React + Vite
+# AR QR Menu
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern React-based landing page for AR QR Menu - a smart digital menu solution for restaurants with QR code scanning and augmented reality features.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **QR Menu**: Customers scan QR codes to access digital menus instantly
+- **AR Experience**: View food items in 3D before ordering
+- **Analytics Dashboard**: Track menu views and customer engagement
+- **Custom Branding**: Match menus with restaurant identity
+- **Multi-language Support**: Serve international customers
+- **Table Booking**: Allow reservations directly from the menu
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **React 19** - UI library
+- **Vite** - Build tool and dev server
+- **React Icons** - Icon library
+- **CSS3** - Styling with modern features
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Prerequisites
+
+- Node.js (v18 or higher)
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/nidhak160/AR-QR-Menu.git
+cd AR-QR-Menu
+```
+
+2. Install dependencies:
+```bash
+npm install
+```
+
+3. Start the development server:
+```bash
+npm run dev
+```
+
+4. Open your browser and navigate to `http://localhost:5173`
+
+## Available Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build
+- `npm run lint` - Run ESLint
+
+## Project Structure
+
+```
+src/
+├── components/
+│   ├── Navbar.jsx
+│   ├── Hero.jsx
+│   ├── Services.jsx
+│   ├── Packages.jsx
+│   ├── Demo.jsx
+│   ├── Contact.jsx
+│   └── Footer.jsx
+├── styles/
+│   └── Css/
+│       ├── Navbar.css
+│       ├── Hero.css
+│       ├── Services.css
+│       ├── Packages.css
+│       ├── Demo.css
+│       ├── Contact.css
+│       └── Footer.css
+├── assets/
+│   └── images/
+├── App.jsx
+├── App.css
+├── main.jsx
+└── index.css
+```
+
+## Deployment
+
+This project is deployed on Vercel. Visit the live site at: [https://ar-qr-menu.vercel.app](https://ar-qr-menu.vercel.app)
+
+## Contact
+
+For inquiries and support:
+- **Email**: hello@arqrmenu.com
+- **Phone**: +91 98765 43210
+- **Location**: 123 Tech Park, Bangalore, India
+
+## License
+
+© 2026 AR QR Menu. All rights reserved.

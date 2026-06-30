@@ -209,6 +209,11 @@
   .contact-info h2 {
     font-size: 40px;
   }
+
+  .info-items {
+    max-width: 500px;
+    margin: 0 auto;
+  }
 }
 
 @media (max-width: 768px) {
@@ -218,36 +223,90 @@
 
   .contact-info h2 {
     font-size: 32px;
+    margin-bottom: 15px;
   }
 
   .contact-subtitle {
     font-size: 16px;
+    margin-bottom: 30px;
   }
 
   .contact-form-wrapper {
     padding: 30px 25px;
+    max-width: 500px;
+    margin: 0 auto;
   }
 
   .contact-form h3 {
     font-size: 24px;
+    margin-bottom: 25px;
   }
 
   .info-item {
     padding: 15px 20px;
   }
+
+  .form-group input,
+  .form-group textarea {
+    padding: 13px 16px;
+    font-size: 14px;
+  }
+
+  .submit-btn {
+    padding: 15px;
+    font-size: 15px;
+    min-height: 48px;
+  }
 }
 
 @media (max-width: 480px) {
+  .contact {
+    padding: 50px 16px;
+  }
+
   .contact-info h2 {
     font-size: 28px;
+  }
+
+  .contact-subtitle {
+    font-size: 15px;
+  }
+
+  .contact-form-wrapper {
+    padding: 25px 20px;
   }
 
   .contact-form h3 {
     font-size: 22px;
   }
 
-  .submit-btn {
+  .info-item {
+    padding: 12px 16px;
+    gap: 15px;
+  }
+
+  .info-icon {
+    width: 45px;
+    height: 45px;
+    font-size: 18px;
+  }
+
+  .info-content h4 {
     font-size: 15px;
-    padding: 14px;
+  }
+
+  .info-content p {
+    font-size: 13px;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    padding: 12px 14px;
+    font-size: 14px;
+  }
+
+  .submit-btn {
+    font-size: 14px;
+    padding: 13px;
   }
 }

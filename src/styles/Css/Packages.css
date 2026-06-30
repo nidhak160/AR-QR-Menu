@@ -151,17 +151,20 @@
 
   .packages h2 {
     font-size: 32px;
+    margin-bottom: 12px;
   }
 
   .subtitle {
     font-size: 16px;
-    margin-bottom: 40px;
+    margin-bottom: 35px;
+    padding: 0 10px;
   }
 
   .package-grid {
     grid-template-columns: 1fr;
-    max-width: 400px;
+    max-width: 450px;
     margin: 0 auto;
+    gap: 25px;
   }
 
   .package-card.popular {
@@ -176,7 +179,70 @@
     padding: 35px 30px;
   }
 
+  .package-card h3 {
+    font-size: 22px;
+  }
+
   .package-card h1 {
     font-size: 42px;
+  }
+
+  .package-card li {
+    font-size: 14px;
+    margin: 12px 0;
+  }
+
+  .package-card button {
+    padding: 14px 28px;
+    font-size: 15px;
+    min-height: 48px;
+  }
+
+  .badge {
+    top: -12px;
+    right: 15px;
+    padding: 7px 14px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .packages {
+    padding: 50px 16px;
+  }
+
+  .packages h2 {
+    font-size: 28px;
+  }
+
+  .subtitle {
+    font-size: 15px;
+    margin-bottom: 30px;
+  }
+
+  .package-grid {
+    max-width: 100%;
+    gap: 20px;
+  }
+
+  .package-card {
+    padding: 30px 25px;
+  }
+
+  .package-card h3 {
+    font-size: 20px;
+  }
+
+  .package-card h1 {
+    font-size: 38px;
+  }
+
+  .package-card li {
+    font-size: 13px;
+  }
+
+  .package-card button {
+    padding: 13px 24px;
+    font-size: 14px;
   }
 }
