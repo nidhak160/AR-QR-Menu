@@ -1,248 +1,124 @@
 .packages {
-  padding: 100px 8%;
-  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
-}
-
-.packages h2 {
-  text-align: center;
-  font-size: 42px;
-  color: #0f172a;
-  margin-bottom: 15px;
-  font-weight: 800;
-}
-
-.subtitle {
-  text-align: center;
-  margin: 15px auto 60px;
-  color: #64748b;
-  font-size: 18px;
-  max-width: 600px;
+  padding: 92px 0;
+  background: #f6f8fb;
 }
 
 .package-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
   align-items: stretch;
 }
 
 .package-card {
-  background: white;
-  padding: 40px 35px;
-  border-radius: 20px;
-  text-align: center;
+  background: #fff;
+  padding: 32px 28px;
+  border-radius: 8px;
+  text-align: left;
   position: relative;
-  transition: all 0.3s ease;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-  border: 2px solid #e2e8f0;
+  border: 1px solid var(--line);
   display: flex;
   flex-direction: column;
-}
-
-.package-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-  border-color: #2563eb;
+  box-shadow: 0 10px 28px rgba(16, 24, 40, 0.06);
 }
 
 .package-card.popular {
-  border: 2px solid #ff6b35;
-  background: linear-gradient(135deg, #fff5f2 0%, #ffffff 100%);
-  transform: scale(1.05);
-}
-
-.package-card.popular:hover {
-  transform: scale(1.05) translateY(-10px);
+  border-color: var(--blue);
+  box-shadow: 0 18px 42px rgba(31, 111, 235, 0.16);
 }
 
 .package-card h3 {
-  color: #0f172a;
-  font-size: 24px;
-  font-weight: 700;
+  color: var(--ink);
+  font-size: 22px;
+  font-weight: 900;
   margin-bottom: 10px;
 }
 
 .package-card h1 {
-  color: #ff6b35;
-  margin: 20px 0;
-  font-size: 48px;
-  font-weight: 800;
+  color: var(--ink);
+  margin: 12px 0 22px;
+  font-size: 46px;
+  line-height: 1;
+  font-weight: 900;
 }
 
 .package-card h1::before {
-  content: "₹";
-  font-size: 24px;
+  content: "Rs ";
+  font-size: 17px;
+  color: var(--muted);
   vertical-align: super;
-  margin-right: 5px;
+  margin-right: 3px;
 }
 
 .package-card ul {
-  list-style: none;
-  padding: 0;
-  margin: 30px 0;
+  margin: 8px 0 28px;
   flex-grow: 1;
 }
 
 .package-card li {
-  margin: 15px 0;
-  color: #475569;
+  margin: 13px 0;
+  color: #344054;
   font-size: 15px;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
   gap: 10px;
 }
 
 .package-card li::before {
-  content: "✓";
-  color: #10b981;
-  font-weight: bold;
-  font-size: 18px;
+  content: "";
+  width: 8px;
+  height: 8px;
+  margin-top: 8px;
+  border-radius: 999px;
+  background: var(--teal);
+  flex: 0 0 auto;
 }
 
-.package-card button {
+.package-card a {
   margin-top: auto;
-  background: linear-gradient(135deg, #ff6b35, #f59e0b);
+  background: var(--navy);
   color: white;
-  border: none;
-  padding: 14px 32px;
-  border-radius: 10px;
-  cursor: pointer;
-  font-size: 16px;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  width: 100%;
-  box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+  padding: 14px 20px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 800;
+  text-align: center;
 }
 
-.package-card button:hover {
-  background: linear-gradient(135deg, #e85a2b, #d97706);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
-}
-
-.package-card.popular button {
-  background: linear-gradient(135deg, #2563eb, #1d4ed8);
-  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
-}
-
-.package-card.popular button:hover {
-  background: linear-gradient(135deg, #1d4ed8, #1e40af);
-  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+.package-card.popular a {
+  background: var(--blue);
 }
 
 .badge {
   position: absolute;
-  top: -15px;
-  right: 20px;
-  background: linear-gradient(135deg, #ff6b35, #f59e0b);
-  color: white;
-  padding: 8px 16px;
-  border-radius: 20px;
-  font-size: 13px;
-  font-weight: 600;
-  box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+  top: 18px;
+  right: 18px;
+  background: #fff3ed;
+  color: #c2410c;
+  padding: 7px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 800;
 }
 
-@media (max-width: 768px) {
-  .packages {
-    padding: 60px 20px;
-  }
-
-  .packages h2 {
-    font-size: 32px;
-    margin-bottom: 12px;
-  }
-
-  .subtitle {
-    font-size: 16px;
-    margin-bottom: 35px;
-    padding: 0 10px;
-  }
-
+@media (max-width: 900px) {
   .package-grid {
     grid-template-columns: 1fr;
-    max-width: 450px;
+    max-width: 520px;
     margin: 0 auto;
-    gap: 25px;
-  }
-
-  .package-card.popular {
-    transform: scale(1);
-  }
-
-  .package-card.popular:hover {
-    transform: translateY(-10px);
-  }
-
-  .package-card {
-    padding: 35px 30px;
-  }
-
-  .package-card h3 {
-    font-size: 22px;
-  }
-
-  .package-card h1 {
-    font-size: 42px;
-  }
-
-  .package-card li {
-    font-size: 14px;
-    margin: 12px 0;
-  }
-
-  .package-card button {
-    padding: 14px 28px;
-    font-size: 15px;
-    min-height: 48px;
-  }
-
-  .badge {
-    top: -12px;
-    right: 15px;
-    padding: 7px 14px;
-    font-size: 12px;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 520px) {
   .packages {
-    padding: 50px 16px;
-  }
-
-  .packages h2 {
-    font-size: 28px;
-  }
-
-  .subtitle {
-    font-size: 15px;
-    margin-bottom: 30px;
-  }
-
-  .package-grid {
-    max-width: 100%;
-    gap: 20px;
+    padding: 60px 0;
   }
 
   .package-card {
-    padding: 30px 25px;
-  }
-
-  .package-card h3 {
-    font-size: 20px;
+    padding: 28px 22px;
   }
 
   .package-card h1 {
-    font-size: 38px;
-  }
-
-  .package-card li {
-    font-size: 13px;
-  }
-
-  .package-card button {
-    padding: 13px 24px;
-    font-size: 14px;
+    font-size: 40px;
   }
 }

@@ -1,33 +1,32 @@
 import "../styles/Css/Hero.css";
 import heroImg from "../assets/image/Hero-image.png";
+import { business } from "../config/business";
 
 function Hero() {
   return (
     <section className="hero" id="home">
       <div className="hero-container">
-
-        {/* Left Content */}
         <div className="hero-text">
+          <span className="section-kicker">Built by {business.name}</span>
           <h1>
-            Smart <span>AR QR Menu</span> for Modern Restaurants
+            Premium <span>{business.productName}</span> for modern restaurants
           </h1>
 
           <p>
-            Transform your restaurant with digital QR menus and AR experience.
-            Customers scan, view, and order instantly.
+            Give guests a polished scan-to-order experience with digital menus,
+            AR dish previews, booking flows, and analytics that help your team
+            sell smarter.
           </p>
 
           <div className="hero-buttons">
-            <button className="primary-btn"><a href="#demo">Get Demo</a></button>
-            <button className="secondary-btn"><a href="#packages">View Packages</a></button>
+            <a className="primary-btn" href="#contact">Book a Demo</a>
+            <a className="secondary-btn" href="#packages">View Packages</a>
           </div>
         </div>
 
-        {/* Right Content */}
         <div className="hero-image">
-          <img src={heroImg} alt="AR QR Menu" />
+          <img src={heroImg} alt="B Socio AR QR Menu preview" />
         </div>
-
       </div>
     </section>
   );

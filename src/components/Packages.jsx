@@ -4,7 +4,7 @@ function Packages() {
   const packages = [
     {
       title: "Starter",
-      price: "₹999",
+      price: "999",
       features: [
         "QR Menu",
         "Up to 20 Menu Items",
@@ -15,7 +15,7 @@ function Packages() {
     },
     {
       title: "Professional",
-      price: "₹2499",
+      price: "2499",
       features: [
         "QR + AR Menu",
         "Unlimited Menu Items",
@@ -27,7 +27,7 @@ function Packages() {
     },
     {
       title: "Premium",
-      price: "₹4999",
+      price: "4999",
       features: [
         "Everything in Professional",
         "Custom Branding",
@@ -41,9 +41,10 @@ function Packages() {
   return (
     <section className="packages" id="packages">
       <div className="container">
-        <h2>Our Packages</h2>
+        <h2>Packages</h2>
         <p className="subtitle">
-          Choose the perfect plan for your restaurant.
+          Clear plans for restaurants moving from static menus to a smarter
+          digital dining experience.
         </p>
 
         <div className="package-grid">
@@ -55,16 +56,15 @@ function Packages() {
               {item.popular && <span className="badge">Most Popular</span>}
 
               <h3>{item.title}</h3>
-
               <h1>{item.price}</h1>
 
               <ul>
                 {item.features.map((feature, i) => (
-                  <li key={i}>✔ {feature}</li>
+                  <li key={i}>{feature}</li>
                 ))}
               </ul>
 
-              <button>Select Plan</button>
+              <a href="#contact">Select Plan</a>
             </div>
           ))}
         </div>

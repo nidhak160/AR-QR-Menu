@@ -1,36 +1,74 @@
 import { useState } from "react";
 import "../styles/Css/Contact.css";
-import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaPaperPlane } from "react-icons/fa";
+import { FaEnvelope, FaMapMarkerAlt, FaPaperPlane, FaPhone } from "react-icons/fa";
+import { business } from "../config/business";
 
 function Contact() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
-    message: ""
+    message: "",
   });
+  const [status, setStatus] = useState({ type: "idle", message: "" });
 
   const handleChange = (e) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    alert("Thank you for your message! We'll get back to you soon.");
-    setFormData({ name: "", email: "", phone: "", message: "" });
+    setStatus({ type: "loading", message: "Sending your enquiry..." });
+
+    const payload = {
+      ...formData,
+      _subject: "New AR QR Menu lead from B Socio landing page",
+      source: "B Socio AR QR Menu landing page",
+    };
+
+    try {
+      const response = await fetch(business.leadEndpoint, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+
+      if (!response.ok) {
+        throw new Error("Lead endpoint rejected the request");
+      }
+
+      setStatus({
+        type: "success",
+        message: "Thanks. B Socio has received your enquiry and will contact you shortly.",
+      });
+      setFormData({ name: "", email: "", phone: "", message: "" });
+    } catch {
+      const mailBody = encodeURIComponent(
+        `Name: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\n\nMessage:\n${formData.message}`
+      );
+      window.location.href = `mailto:${business.email}?subject=AR QR Menu enquiry&body=${mailBody}`;
+      setStatus({
+        type: "success",
+        message: "Your email app is opening with the enquiry details.",
+      });
+    }
   };
 
   return (
     <section className="contact" id="contact">
       <div className="contact-container">
-        {/* Left Side - Contact Info */}
         <div className="contact-info">
-          <h2>Get in Touch</h2>
+          <span className="section-kicker">Contact B Socio</span>
+          <h2>Launch a better menu experience.</h2>
           <p className="contact-subtitle">
-            Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.
+            Tell us about your restaurant and B Socio will help you plan the
+            right QR menu, AR preview, and lead-ready digital ordering flow.
           </p>
 
           <div className="info-items">
@@ -39,8 +77,10 @@ function Contact() {
                 <FaEnvelope />
               </div>
               <div className="info-content">
-                <h4>Email Us</h4>
-                <p>hello@arqrmenu.com</p>
+                <h4>Email</h4>
+                <p>
+                  <a href={`mailto:${business.email}`}>{business.email}</a>
+                </p>
               </div>
             </div>
 
@@ -49,8 +89,8 @@ function Contact() {
                 <FaPhone />
               </div>
               <div className="info-content">
-                <h4>Call Us</h4>
-                <p>+91 98765 43210</p>
+                <h4>Phone</h4>
+                <p>{business.phone}</p>
               </div>
             </div>
 
@@ -59,23 +99,22 @@ function Contact() {
                 <FaMapMarkerAlt />
               </div>
               <div className="info-content">
-                <h4>Visit Us</h4>
-                <p>123 Tech Park, Bangalore, India</p>
+                <h4>Location</h4>
+                <p>{business.location}</p>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Right Side - Contact Form */}
         <div className="contact-form-wrapper">
           <form className="contact-form" onSubmit={handleSubmit}>
-            <h3>Send us a Message</h3>
-            
+            <h3>Book a Restaurant Demo</h3>
+
             <div className="form-group">
               <input
                 type="text"
                 name="name"
-                placeholder="Your Name"
+                placeholder="Your name"
                 value={formData.name}
                 onChange={handleChange}
                 required
@@ -86,7 +125,7 @@ function Contact() {
               <input
                 type="email"
                 name="email"
-                placeholder="Your Email"
+                placeholder="Business email"
                 value={formData.email}
                 onChange={handleChange}
                 required
@@ -97,7 +136,7 @@ function Contact() {
               <input
                 type="tel"
                 name="phone"
-                placeholder="Your Phone"
+                placeholder="Phone number"
                 value={formData.phone}
                 onChange={handleChange}
               />
@@ -106,17 +145,21 @@ function Contact() {
             <div className="form-group">
               <textarea
                 name="message"
-                placeholder="Your Message"
+                placeholder="Restaurant name, city, and what you need"
                 rows="5"
                 value={formData.message}
                 onChange={handleChange}
                 required
-              ></textarea>
+              />
             </div>
 
-            <button type="submit" className="submit-btn">
-              <FaPaperPlane /> Send Message
+            <button type="submit" className="submit-btn" disabled={status.type === "loading"}>
+              <FaPaperPlane /> {status.type === "loading" ? "Sending..." : "Send Enquiry"}
             </button>
+
+            {status.message && (
+              <p className={`form-status ${status.type}`}>{status.message}</p>
+            )}
           </form>
         </div>
       </div>

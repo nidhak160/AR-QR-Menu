@@ -1,33 +1,36 @@
 import { useState } from "react";
 import "../styles/Css/Navbar.css";
 import { FaBars, FaTimes } from "react-icons/fa";
+import { business } from "../config/business";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
+  const closeMenu = () => setIsOpen(false);
 
   return (
     <nav className="navbar">
-      <div className="logo">
-        AR QR <span>Menu</span>
-      </div>
+      <a className="logo" href="#home" onClick={closeMenu}>
+        {business.name} <span>{business.productName}</span>
+      </a>
 
       <ul className={`nav-links ${isOpen ? "active" : ""}`}>
-        <li><a href="#home" onClick={() => setIsOpen(false)}>Home</a></li>
-        <li><a href="#services" onClick={() => setIsOpen(false)}>Services</a></li>
-        <li><a href="#packages" onClick={() => setIsOpen(false)}>Packages</a></li>
-        <li><a href="#demo" onClick={() => setIsOpen(false)}>Demo</a></li>
-        <li><a href="#contact" onClick={() => setIsOpen(false)}>Contact</a></li>
+        <li><a href="#home" onClick={closeMenu}>Home</a></li>
+        <li><a href="#services" onClick={closeMenu}>Services</a></li>
+        <li><a href="#packages" onClick={closeMenu}>Packages</a></li>
+        <li><a href="#demo" onClick={closeMenu}>Demo</a></li>
+        <li><a href="#contact" onClick={closeMenu}>Contact</a></li>
       </ul>
 
-      <button className="btn">Get Started</button>
+      <a className="btn" href="#contact">Get Started</a>
 
-      <div className="menu-toggle" onClick={toggleMenu}>
+      <button
+        className="menu-toggle"
+        onClick={() => setIsOpen((open) => !open)}
+        aria-label="Toggle navigation"
+      >
         {isOpen ? <FaTimes /> : <FaBars />}
-      </div>
+      </button>
     </nav>
   );
 }
